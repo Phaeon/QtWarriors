@@ -31,3 +31,12 @@ Jusqu'au 12 avril :
 - Penser à des améliorations
 - Adapter le code 
 - Commencer le travail sur le réseau
+
+
+### Choses à améliorer ou à revoir :
+
+- Revoir la gestion des vies
+- Améliorer le plateau de jeu ainsi que les règles
+- Adapter les IA
+- Revoir le plateau en utilisant la bilbiothèque Boost
+- Continuer sur les classes de joueurs en utilisant le design pattern Decorator
