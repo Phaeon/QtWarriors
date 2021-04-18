@@ -40,3 +40,22 @@ Jusqu'au 12 avril :
 - Adapter les IA
 - Revoir le plateau en utilisant la bilbiothèque Boost
 - Continuer sur les classes de joueurs en utilisant le design pattern Decorator
+
+
+Jusqu'au 15 avril :
+
+- conception du decorator ;
+- réalisation du MCTS ;
+
+
+16 avril :
+
+- Mise au point sur le travail réalisé et ce qui reste à faire ;
+- Terminer le décorator
+
+Weekend du 17 et 18 avril :
+
+- Diagramme UML ;
+- Finissions sur le decorator ;
+- Restructuration du code ;
+- Amélioration de l'IA ;
