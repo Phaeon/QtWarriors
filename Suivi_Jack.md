@@ -59,3 +59,32 @@ Weekend du 17 et 18 avril :
 - Finissions sur le decorator ;
 - Restructuration du code ;
 - Amélioration de l'IA ;
+
+
+19 et 20 avril : Fusion de ma partie avec celle de Tanguy, structure MVC, diagramme UML
+
+## TODO LIST
+
+### Général
+
+- Utiliser Boost
+- Revoir les pointeurs (unique_ptr...)
+- Surcharger l'opérateur = et créer constructeurs nécessaires
+
+### game.cpp
+
+- Refaire la fonction coupsPossibles
+
+### pions
+
+- Créer les capacités de chaque type de pion
+- Revoir le calcul de l'attaque (ajusté à la défense)
+- Définir les stats de chaque pion
+
+### IA
+
+- Améliorer l'IA
+- L'appliquer au joueur IA
+- Associer a-B avec MCTS
+
+
