@@ -63,6 +63,12 @@ Weekend du 17 et 18 avril :
 
 19 et 20 avril : Fusion de ma partie avec celle de Tanguy, structure MVC, diagramme UML
 
+21 et 22 avril : Travail à la BU (Améliorer le code, revoir la fusion, prise en main d'OpenGL, recherche
+
+Weekend du 23 au 25 avril : Tank, OpenGL et Qt, repos
+
+26 avril : Refonte des pions et des capacités, documentation du code, 
+
 ## TODO LIST
 
 ### Général
