@@ -67,7 +67,22 @@ Weekend du 17 et 18 avril :
 
 Weekend du 23 au 25 avril : Tank, OpenGL et Qt, repos
 
-26 avril : Refonte des pions et des capacités, documentation du code, 
+26 avril : Refonte des pions et des capacités, documentation du code
+
+27 avril : Revoir les coups possibles
+
+28 avril :
+
+29 avril (BU) :
+
+- Avancement sur l'IA ;
+- Revoir le jeu en brut (C++)
+
+30 avril (BU) :
+
+- Avancement sur l'IA
+
+Weekend du 01 et 02 mai : OpenGL (Mouvements, Attaques, Flèche, recherche de textures)
 
 ## TODO LIST
 
@@ -77,20 +92,22 @@ Weekend du 23 au 25 avril : Tank, OpenGL et Qt, repos
 - Revoir les pointeurs (unique_ptr...)
 - Surcharger l'opérateur = et créer constructeurs nécessaires
 
-### game.cpp
-
-- Refaire la fonction coupsPossibles
-
 ### pions
 
 - Créer les capacités de chaque type de pion
 - Revoir le calcul de l'attaque (ajusté à la défense)
-- Définir les stats de chaque pion
 
 ### IA
 
 - Améliorer l'IA
 - L'appliquer au joueur IA
 - Associer a-B avec MCTS
+
+# OpenGL
+
+- Textures
+- Attaques et mouvements
+- Lumières et blending
+- BONUS : Environnement et effets
 
 
