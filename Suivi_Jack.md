@@ -103,11 +103,23 @@ Weekend du 01 et 02 mai : OpenGL (Mouvements, Attaques, Flèche, recherche de te
 - L'appliquer au joueur IA
 - Associer a-B avec MCTS
 
-# OpenGL
+### OpenGL
 
 - Textures
 - Attaques et mouvements
 - Lumières et blending
 - BONUS : Environnement et effets
+
+## Bibliographie
+
+### Sites internet
+
+https://learnopengl.com/Getting-started/Textures (Textures)
+
+### Livres
+
+- Les Réseaux pour les nuls
+
+
 
 
