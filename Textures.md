@@ -2,7 +2,7 @@
 
   - Pour la robe, le cou et la tête (uniquement les triangle, pas la base) : GIMP starfield.
   - Pour le visage (Base de la pyramide) : color black ou dark grey (Pas de bonne textures trouvée je te laisse voir).
-  - Pour les bras mécaniques : trouver texture metallique/futuriste.
+  - Pour les bras mécaniques : trouver texture metallique/futuriste ou comme le visage juste couleur.
   - Pour la boule au bout des bras : GIMP electric blue (GIMP lightning a essayer).
   - Pour la boule / Octahedron au milieu des bras : GIMP slate ? (je sais pas trop ici je te laisse juger).
 
