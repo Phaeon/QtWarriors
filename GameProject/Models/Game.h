@@ -6,6 +6,7 @@
 #include <cassert>
 #include <array>
 #include <memory>
+#include <QObject>
 
 #include "Models/Pawns/pawn.h"
 #include "config.h"
@@ -32,8 +33,9 @@ struct Position {
 /**
  * @brief The Game class
  */
-class Game
+class Game : public QObject
 {
+        Q_OBJECT
 private:
     int _nb_rounds; // Nombre de tours
 
@@ -46,6 +48,7 @@ private:
 public:
     Game();
     ~Game();
+    Game(const Game& g);
 
     // Initialisation du plateau ainsi que l'état de la game
     void reset();
@@ -75,6 +78,11 @@ public:
     }
 
     void setSlot(int X, int Y, std::shared_ptr<Pawn> p);
+
+public slots:
+
+signals:
+    void endOfTurn();
 
 };
 

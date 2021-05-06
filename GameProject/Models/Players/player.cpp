@@ -8,7 +8,7 @@ bool Player::_played(true);
  * @param player : true (premier), false (deuxième)
  */
 Player::Player(const bool &player)
-    : _player(player), _ListPionsGame()
+    : _player(player), _posPawn(), _isValid(false), _ListPionsGame()
 {}
 
 /**
@@ -174,5 +174,20 @@ QVector<std::shared_ptr<Pawn>> Player::getListPionsGame() const
 std::shared_ptr<Pawn> Player::getPion(int index) const
 {
     return this->_ListPionsGame.at(index);
+}
+
+bool Player::getValid() const
+{
+    return this->_isValid;
+}
+
+void Player::setValid(bool valid)
+{
+    this->_isValid = valid;
+}
+
+void Player::setPosPawn(PositionPawn p)
+{
+    _posPawn = p;
 }
 

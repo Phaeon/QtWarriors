@@ -2,7 +2,7 @@
 
 GLvoid Guerrier::displayGuerrier()
 {
-    glClear(GL_COLOR_BUFFER_BIT);
+    //glClear(GL_COLOR_BUFFER_BIT);
     /*
     glColor3f(1.0, 1.0, 1.0);
     glCallList(1);

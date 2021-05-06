@@ -11,6 +11,16 @@
 #include "Models/Game.h"
 
 /**
+ * @brief The PositionPawn struct
+ * Cette structure permet de mettre transporter les informations dans un signal nécessaire à la modification de la position d'un pion
+ */
+struct PositionPawn{
+    int _x;
+    int _y;
+    int _Pawn;
+};
+
+/**
  * @brief Class Player
  * Classe mère des joueurs
  * Chaque joueur doit implémenter la méthode play et search_next_shot
@@ -44,8 +54,15 @@ public:
     QVector<std::shared_ptr<Pawn>> pawnsPlayer(Game);
     QVector<Position> pawnsPossibles(Game, std::shared_ptr<Pawn>);
 
+    bool getValid() const;
+    void setValid(bool valid);
+    void setPosPawn(PositionPawn p);
+
 protected:
     QVector<std::shared_ptr<Pawn>> _ListPionsGame;
+    PositionPawn _posPawn;
+    bool _isValid;
+
 
 
 };

@@ -31,7 +31,6 @@ private:
     float x_distance;
     float z_distance;
 
-    GLuint textures[1];
 
     QPoint last_pos;
     QTimer timer;

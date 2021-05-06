@@ -39,12 +39,11 @@ private:
 
     static int _tours;
 
-
 public:
     GameManagment();
     ~GameManagment();
 
-    int game();
+    void startGame();
     void initialisation();
 
     std::shared_ptr<Player> getPlayer() const;
@@ -57,12 +56,15 @@ public:
     int MinY(std::shared_ptr<Pawn> p) const;
     bool IsInPawnPossible(Position p, std::shared_ptr<Pawn> m) const;
 
+
+
 public slots:
     void UpdateBoard(PositionPawn PP);
     void addListPionGame(std::shared_ptr<Pawn>);
     void removeListPionGame(std::shared_ptr<Pawn>);
+    void game();
 
-signals :
+signals:
     void YouPlay();
 };
 #endif // PARTIE_H

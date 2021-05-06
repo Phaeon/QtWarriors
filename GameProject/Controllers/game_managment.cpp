@@ -10,6 +10,8 @@ GameManagment::GameManagment()
   : _game(), _pawn(), _pos(), _mutex()
 {
     GameManagment::initialisation();
+
+    connect(&_game, &Game::endOfTurn, this, &GameManagment::game);
 }
 
 /**
@@ -29,7 +31,7 @@ void GameManagment::initialisation()
 
     _game.reset();
 
-    std::cout << _game << std::endl;
+    //std::cout << _game << std::endl;
 
     if (_firstPlayer) {
         _player = std::make_shared<Player_PHYSICAL>(true);
@@ -45,23 +47,22 @@ void GameManagment::initialisation()
  * @brief GameManagment::game : Lance une partie
  * @return le résultat de la partie
  */
-int GameManagment::game()
+void GameManagment::game()
 {
 
-    _game.setSlot(0, 9, getPlayerEnemy()->getPion(0));
-    _game.setSlot(2, 9, getPlayerEnemy()->getPion(1));
-    _game.setSlot(4, 9, getPlayerEnemy()->getPion(2));
-    _game.setSlot(6, 9, getPlayerEnemy()->getPion(3));
+   // _game.setSlot(0, 9, getPlayerEnemy()->getPion(0));
+    //_game.setSlot(2, 9, getPlayerEnemy()->getPion(1));
+    //_game.setSlot(4, 9, getPlayerEnemy()->getPion(2));
+    //_game.setSlot(6, 9, getPlayerEnemy()->getPion(3));
 
-    std::cout << "Début de la game !" << std::endl;
-    int tour(0);
+    //std::cout << "Début de la game !" << std::endl;
+    //int tour(0);
 
     std::shared_ptr<Player> player;
-    std::shared_ptr<Pawn> pawnAdv = nullptr;
-
-    while (!_game.gameEnded()) {
-        tour++;
-        player = (tour%2) ? _player2 : _player;
+    //std::shared_ptr<Pawn> pawnAdv = nullptr;
+    //while (!_game.gameEnded()) {
+        _tours++;
+        player = (_tours%2) ? _player2 : _player;
         _mutex.unlock();
 
        // std::cout << player->player() << std::endl;
@@ -70,20 +71,20 @@ int GameManagment::game()
 
         //if (player->player()) {
 
-           /*std::cout << "Un tour qui se joue !" << std::endl << "Voici vos joueurs disponibles :" << std::endl;
-            for (int i(0); i < pawns.size(); i++)
-            {
-                std::cout << i+1 << " - " << pawns[i] << std::endl;
-            }
+           //std::cout << "Un tour qui se joue !" << std::endl << "Voici vos joueurs disponibles :" << std::endl;
+            //for (int i(0); i < pawns.size(); i++)
+            //{
+              //  std::cout << i+1 << " - " << pawns[i] << std::endl;
+            //}
 
-            int c(1);
+            //int c(1);
 
-            do {
-                std::cout << "Quel est votre choix ?" << std::endl;
-                std::cin >> c;
-            } while (c <= 0 || c > pawns.size());
+            //do {
+                //std::cout << "Quel est votre choix ?" << std::endl;
+              //  std::cin >> c;
+            //} while (c <= 0 || c > pawns.size());
 
-            _pawn = pawns[c-1];*/
+           // _pawn = pawns[c-1];
 
             //emit YouPlay();
             //std::cout << "player play";
@@ -94,6 +95,7 @@ int GameManagment::game()
         //}
 
         //pawnAdv = _pawn;
+        if(player->player()) emit YouPlay();
 
         Position pTemp;
 
@@ -125,17 +127,36 @@ int GameManagment::game()
 
         player->setPlayed();
 
-        if (!erreur) _game.play(player->player(), _pawn, _pos); // A REVOIR*/
+        if (!erreur) _game.play(player->player(), _pawn, _pos); // A REVOIR
 
         //std::cout << _game << std::endl;
-    }
+    //}
+
+
+    // if (_game.getGameState() != STATE_GAME::DRAW) emit endOfTurn();
+     //else if (_game.getGameState() != STATE_GAME::END_1) emit endOfTurn();
+     //else if (_game.getGameState() != STATE_GAME::END_2) emit endOfTurn();
+     //else std::cout << "YOU WIN"; // Code erreur
+
 
     // Fin de game en cas de victoire simple d'un Player
-    if (_game.getGameState() == STATE_GAME::DRAW) return 0;
-    else if (_game.getGameState() == STATE_GAME::END_1) return 1;
-    else if (_game.getGameState() == STATE_GAME::END_2) return -1;
-    else return -2; // Code erreur
+    //if (_game.getGameState() == STATE_GAME::DRAW) return 0;
+    //else if (_game.getGameState() == STATE_GAME::END_1) return 1;
+    //else if (_game.getGameState() == STATE_GAME::END_2) return -1;
+    //else return -2; // Code erreur
 
+}
+
+void GameManagment::startGame()
+{
+    _game.setSlot(0, 9, getPlayerEnemy()->getPion(0));
+    _game.setSlot(2, 9, getPlayerEnemy()->getPion(1));
+    _game.setSlot(4, 9, getPlayerEnemy()->getPion(2));
+    _game.setSlot(6, 9, getPlayerEnemy()->getPion(3));
+
+    std::cout << "Début de la game !" << std::endl;
+
+    game();
 }
 
 /**
@@ -236,7 +257,7 @@ bool GameManagment::IsInPawnPossible(Position p, std::shared_ptr<Pawn> m) const
     for(auto pos : getPlayer()->pawnsPossibles(_game, m)){
         if(pos._x == p._x && pos._y == p._y) return true;
     }
-        return false;
+    return false;
 }
 
 void GameManagment::UpdateBoard(PositionPawn PP)

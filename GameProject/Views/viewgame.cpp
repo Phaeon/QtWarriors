@@ -15,7 +15,7 @@ ViewGame::ViewGame(Controller *controller, std::shared_ptr<Player> player,  std:
   QDialog(parent), View (controller),
   ui(new Ui::ViewGame),
   _Player(player), _PlayerEnemy(playerEnemy), _Game(game), _PawnChoose(0), _IsSelected(false), _AllIsPositioned(false), _X(10), _Y(10),
-  _play(true)
+  _play(false)
 {
   ui->setupUi(this);
   setWindowState(Qt::WindowFullScreen);
@@ -253,9 +253,9 @@ void ViewGame::ChooseMovementAttack()
           ButtonValider->setText(tr("Heal"));
   ButtonValider->setMaximumSize(200, 30);
   if(_play == true)
-      ButtonValider->setEnabled(false);
-  else ButtonValider->setEnabled(true);
-  //connect(ButtonValider, &QPushButton::clicked, this, &ViewGame::UpdatePositionPawnSignal);
+      ButtonValider->setEnabled(true);
+  else ButtonValider->setEnabled(false);
+  connect(ButtonValider, &QPushButton::clicked, this, &ViewGame::PlayerPlay);
   HBoxBtn->addWidget(ButtonValider);
   ChooseMovementAttackLayout->addLayout(HBoxBtn);
 
@@ -298,10 +298,20 @@ void ViewGame::UpdatePositionPawnSignal()
 void ViewGame::YouCanPlay()
 {
     std::cout << "test";
-   // _play = false;
-   // ClearChoosePositionLayout();
-   // ClearDetailLayout();
-   // UpdateDetailPawn(_PawnChoose);
+   _play = true;
+   ClearChoosePositionLayout();
+   ClearDetailLayout();
+   UpdateDetailPawn(_PawnChoose);
+}
+
+void ViewGame::PlayerPlay()
+{
+    _Player->setPosPawn(PositionPawn{_X, _Y, _PawnChoose});
+    _Player->setValid(true);
+    _play= false;
+    ClearChoosePositionLayout();
+    ClearDetailLayout();
+    UpdateDetailPawn(_PawnChoose);
 }
 
 /**
@@ -405,7 +415,7 @@ void ViewGame::keyPressEvent(QKeyEvent *event)
         else this->_IsSelected = false;
         break;
   case Qt::Key_B :
-        _Controller->getGameManagement()->game();
+        _Controller->getGameManagement()->startGame();
       break;
 
     case Qt::Key_Escape :

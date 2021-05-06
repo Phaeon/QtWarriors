@@ -1,17 +1,12 @@
 #include "openglwidget.hpp"
 #include <iostream>
-#include <QImage>
-
-#define STB_IMAGE_IMPLEMENTATION
-#include "stb_image.h"
-
 /**
  * @brief OpenGLWidget::OpenGLWidget : Créer un widget OpenGL
  * @param parent :Objet QWidget
  */
 OpenGLWidget::OpenGLWidget(QWidget *parent) :  QGLWidget(parent)
 {
-  //setFocusPolicy(Qt::StrongFocus);
+  setFocusPolicy(Qt::StrongFocus);
   //Mets à jour le widget toutes les 16 millisecondes
   connect(&timer, SIGNAL(timeout()), this, SLOT(updateGL()));
   timer.start(16);
@@ -32,25 +27,6 @@ void OpenGLWidget::initializeGL()
     z_rot = 0;
     z_distance = 0.5;
     x_distance = 0.5;
-
-    // GESTION TEXTURES (A MODIFIER: FAIRE UNE FONCTION ANNEXE POUR CHARGER UNE TEXTURE À LA FOIS: https://openclassrooms.com/forum/sujet/textures-opengl-et-qt)
-    QImage qim_Texture;
-    QImage qim_TempTexture;
-    if (!qim_TempTexture.load(":/img/texture.jpg")) // FICHIER A CHARGER (ENREGISTRÉ DANS RESSOURCES.QRC)
-    {
-        throw std::bad_alloc();
-    }
-    qim_Texture = QGLWidget::convertToGLFormat( qim_TempTexture );
-
-    glEnable(GL_TEXTURE_2D);
-    glGenTextures(1, textures); // Argument 1 : Nombre de textures différentes
-    glBindTexture(GL_TEXTURE_2D, textures[0]);
-
-    // NE PAS MODIFIER
-    glTexImage2D( GL_TEXTURE_2D, 0, 4, qim_Texture.width(), qim_Texture.height(), 0, GL_RGBA, GL_UNSIGNED_BYTE, qim_Texture.bits() );
-    glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST );
-    glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST );
-
 }
 
 /**
@@ -89,28 +65,6 @@ void OpenGLWidget::paintGL()
       //G.displayGuerrier();
       //Tank T;
       //T.displayTank();
-
-      glEnable(GL_TEXTURE_2D); // TOUJOURS ENABLE EN DÉBUT D'APPLICATION DE TEXTURE
-      glTranslatef(0.0, 3.0, 0.0);
-      glBindTexture(GL_TEXTURE_2D, textures[0]); // L'indice c'est l'ID de la texture enregistrée dans le chargement
-      glBegin(GL_QUADS); // PETIT SOUCIS... COORDONNEES DE LA TEXTURE POUR UN POLYGONE ?
-      {
-          glColor3f(255, 255, 255);
-
-          glTexCoord2f(0.0f, 0.0f);
-          glVertex3f(1.0, 1.0, 0.0);
-
-          glTexCoord2f(1.0f, 0.0f);
-          glVertex3f(1.0, -1.0, 0.0);
-
-          glTexCoord2f(1.0f, 1.0f);
-          glVertex3f(-1.0, -1.0, 0.0);
-
-          glTexCoord2f(0.0f, 1.0f);
-          glVertex3f(-1.0, 1.0, 0.0);
-      }
-      glEnd();
-      glDisable(GL_TEXTURE_2D); // TOUJOURS DISABLE APRÈS AVOIR APPLIQUÉ UNE TEXTURE
 
 
     if(turn){

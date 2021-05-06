@@ -12,6 +12,11 @@ Game::Game()
 Game::~Game()
 {}
 
+Game::Game(const Game &g)
+{
+
+}
+
 /**
  * @brief Game::reset : Remet à plat un jeu
  */
@@ -131,6 +136,8 @@ void Game::play(const int &player, std::shared_ptr<Pawn> playing, Position p)
     // Si le Player opposé n'a plus de pièces, alors la game est terminée.
     if (allPawnsPlayed(!player))
         _state = (player) ? STATE_GAME::END_1 : STATE_GAME::END_2;
+
+    emit endOfTurn();
 
 }
 

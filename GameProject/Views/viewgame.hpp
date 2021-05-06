@@ -16,16 +16,6 @@ namespace Ui {
 }
 
 /**
- * @brief The PositionPawn struct
- * Cette structure permet de mettre transporter les informations dans un signal nécessaire à la modification de la position d'un pion
- */
-struct PositionPawn{
-    int _x;
-    int _y;
-    int _Pawn;
-};
-
-/**
  * @brief The ViewGame class
  * Cette interface gère tout l'affichage d'une partie
  */
@@ -40,6 +30,7 @@ public:
 private slots:
   void UpdatePositionPawnSignal();
   void YouCanPlay();
+  void PlayerPlay();
 
 signals :
     void UpdatePositionPawn(PositionPawn);

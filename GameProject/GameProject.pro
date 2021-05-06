@@ -95,8 +95,7 @@ HEADERS += \
         Models/Objects/decahedron.h \
         Models/Objects/cylindre.h \
         library.hpp \
-        Models/Objects/tank.h \
-    stb_image.h
+        Models/Objects/tank.h
 
 
 FORMS += \
@@ -110,7 +109,4 @@ LIBS += -lm -lGL -lGLU -lglut
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
-
-RESOURCES += \
-    ressources.qrc
 
