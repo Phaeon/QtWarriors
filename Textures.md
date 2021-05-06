@@ -19,3 +19,7 @@
 
   - Corne et protubérences sur le dos : GIMP crinkled paper.
   - Pour tout le corps : trouver textures ecailles lézards/dino différentes pour les différentes parties du corps, on peux essayer GIMP mapple leaves mais ne parait pas adapter.
+
+# FLECHE #
+
+  - Pas oublier de texturer / colorier la fleche !
