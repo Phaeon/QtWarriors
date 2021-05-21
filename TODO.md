@@ -21,7 +21,6 @@
 
 - Textures à appliquer (Jack)
 - Skybox (Guillaume)
-- Normales (Jack)
 - Listes d'affichage (Guillaume)
 
 ## Bibliographie
