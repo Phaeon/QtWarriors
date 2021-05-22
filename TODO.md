@@ -19,9 +19,9 @@
 
 ### OpenGL
 
-- Textures à appliquer (Jack)
 - Skybox (Guillaume)
 - Listes d'affichage (Guillaume)
+- Attaques (Mouvements)
 
 ## Bibliographie
 
