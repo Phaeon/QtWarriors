@@ -3,7 +3,6 @@
 ### Général
 
 - Finir le site et le rapport
-- Bibliographie
 - Surcharger l'opérateur =
 - Fusion
 - Attaques spéciales
@@ -14,7 +13,6 @@
 
 ### IA (Jack)
 
-- Rédiger le rapport et créer les automates avec Tiks 
 - Faire le mode difficile
 
 ### OpenGL
@@ -22,13 +20,3 @@
 - Skybox (Guillaume)
 - Listes d'affichage (Guillaume)
 - Attaques (Mouvements)
-
-## Bibliographie
-
-### Sites internet
-
-https://learnopengl.com/Getting-started/Textures (Textures)
-
-### Livres
-
-- Les Réseaux pour les nuls
