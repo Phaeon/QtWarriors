@@ -1,0 +1,21 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+    <qresource prefix="/img">
+        <file alias="texture.jpg">docs/test.jpg</file>
+        <file alias="tank_1.jpg">docs/tank_corps_1.jpg</file>
+        <file alias="tank_2.jpg">docs/tank_corps_2.jpg</file>
+        <file alias="tank_3.jpg">docs/tank_autre.jpg</file>
+
+        <file alias="warrior_1.jpg">docs/warrior_cornes.jpg</file>
+
+        <file alias="wizard_1.jpg">docs/wizard_inter_arm.jpg</file>
+        <file alias="wizard_2.jpg">docs/wizard_end_arm.jpg</file>
+        <file alias="wizard_3.jpg">docs/wizard_end_arm_2.jpg</file>
+        <file alias="wizard_4.jpg">docs/wizard_arm.jpg</file>
+        <file alias="wizard_5.jpg">docs/wizard_robe.jpg</file>
+
+        <file alias="rogue_1.jpg">docs/warrior_cornes.jpg</file>
+
+        <file alias="tile.jpg">docs/crate.jpg</file>
+    </qresource>
+</RCC>
