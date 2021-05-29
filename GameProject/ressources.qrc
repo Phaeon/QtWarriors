@@ -1,6 +1,0 @@
-<!DOCTYPE RCC>
-<RCC version="1.0">
-    <qresource prefix="/img">
-        <file alias="texture.jpg">docs/test.jpg</file>
-    </qresource>
-</RCC>
