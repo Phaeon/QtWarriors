@@ -1,0 +1,17 @@
+{
+    "name": "tangu/my_site",
+    "authors": [
+        {
+            "name": "tanguy",
+            "email": "tanguy.jouvin@hotmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Modeles\\": "Modele/",
+            "Framework\\": "Framework/",
+            "Controleur\\": "Controleur/"
+        }
+    },
+    "require": {}
+}

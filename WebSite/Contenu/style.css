@@ -1,0 +1,41 @@
+.myColor {
+  background-color: #069E8C !important;
+}
+
+.ul_Context{
+  padding-left: revert !important;
+}
+
+#global{
+  min-height: 100vh;
+  background-color: #F0F2F2;
+}
+
+a.link:hover {
+  color: #C6CDCD;
+}
+a.myColor {
+  color: #039be5 !important;
+}
+
+li.ul_empty {
+  list-style-type: disc !important;
+}
+
+
+.imgArrow {
+  margin-top: 45%;
+}
+
+.logo-img {
+  width: inherit;
+}
+
+.imgArrowBilan {
+  -webkit-transform:rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+  margin-left: 50%
+}
