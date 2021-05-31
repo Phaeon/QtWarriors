@@ -38,9 +38,9 @@
     </ul>
     <!-- Intelligence Artificielle -->
     <ul id="dropdown2" class="dropdown-content">
-      <li><a href="IA/alphaBeta">Alpha-Beta</a></li>
+      <li><a href="Ia/alphaBeta">Alpha-Beta</a></li>
       <li class="divider"></li>
-      <li><a href="IA/automates">Automates</a></li>
+      <li><a href="Ia/automates">Automates</a></li>
     </ul>
 
     <body>
@@ -53,7 +53,7 @@
         <nav class="footer-copyright myColor">
             <div class="container center">
             <?= date('Y');?> Copyright
-            <a class="myColor" href="DL/index">Declaration sur l'honneur </a>
+            <a class="myColor" href="Dl/index">Declaration sur l'honneur </a>
             </div>
         </nav>
       </footer>

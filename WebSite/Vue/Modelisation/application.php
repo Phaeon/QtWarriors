@@ -4,7 +4,7 @@
     <div class="col s10">
         <h4>Modélisation de l'application</h4>
         <div class="divider"></div>
-        <h5><u>Principe du Modele Vue Contrôleur</u></h5>
+        <h5><u>Principe du Modèle Vue Contrôleur</u></h5>
         <div class="section">   
             <p>Les rôles de ces trois entités sont donc les suivantes : <p>
             <ul class="ul_Context">

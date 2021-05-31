@@ -7,14 +7,14 @@
         <h5><u>Formes géométriques</u></h5>
         <div class="section">
             <ul class="ul_Context">
-                <li class="ul_empty">Torus.</li>
-                <li class="ul_empty">Tile.</li>
+                <li class="ul_empty">Cube.</li>
                 <li class="ul_empty">Sphere.</li>
                 <li class="ul_empty">Pyramide.</li>
-                <li class="ul_empty">Octohedron.</li>
+                <li class="ul_empty">Octahedron.</li>
                 <li class="ul_empty">Decahedron.</li>
                 <li class="ul_empty">Cylindre.</li>
                 <li class="ul_empty">Cone.</li>
+                <li class="ul_empty">Disk</li>
             </ul>
         </div>
         <h5><u>Monstres</u></h5>
