@@ -23,6 +23,8 @@ Pour installer le projet vous pouvez le cloner avec une clé SSH, ou bien télé
 ```
 $ git clone git@github.com:Phaeon/QtWarriors.git
 ```
+Le paquet qt5-default doit-être installé sur votre machine
+
 **Compilation**
 
 Créer un dossier build et se déplacer dedans
